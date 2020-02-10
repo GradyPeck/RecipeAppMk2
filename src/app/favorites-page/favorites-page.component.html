@@ -3,6 +3,6 @@
         <button (click) = "addRecipe(post)"><i class = "material-icons">favorite</i></button>
         <h1> {{ post.recipe.label }} </h1>
         <img [src] = "post.recipe.image">
-        <app-search-form [post] = "post"></app-search-form>
+        <app-search-criteria [post] = "post"></app-search-criteria>
     </div>
 </div>
