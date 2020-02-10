@@ -22,10 +22,7 @@ export class RecipeListComponent implements OnInit {
   constructor(public service: RecipesService) { }
 
   ngOnInit(): void {
-    this.service.getRecipes();
+    // this.service.getRecipes();
   }
-
-  addRecipe(post) {
-    this.service.addToFavoritesList(post)
-  }
+  
 }

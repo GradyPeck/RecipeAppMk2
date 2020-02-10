@@ -1,0 +1,13 @@
+<h4> {{ post.recipe.label }} </h4>
+<img [src] = "post.recipe.image">
+<button *ngIf="fave" (click) = "removeRecipe(post)">Unfavorite</button>
+<button *ngIf="!fave" (click) = "addRecipe(post)">Favorite</button>
+<button *ngIf="!detailed" (click)="toggleDetailed()">See More</button>
+<div *ngIf="detailed">
+    <button (click)="toggleDetailed()">See Less</button>
+    <h5>Ingredients:</h5>
+    <div *ngFor="let ingredient of post.recipe.ingredientLines">
+        <li>{{ingredient}}</li>
+    </div>
+    <a href = "{{ post.recipe.url }} ">Visit at {{post.recipe.source}}</a>
+</div>

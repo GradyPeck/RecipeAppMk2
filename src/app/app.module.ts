@@ -9,6 +9,8 @@ import { FavoritesPageComponent } from './favorites-page/favorites-page.componen
 import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './main/main.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
+import { RouterModule, Routes } from '@angular/router';
+import { RecipeComponent } from './recipe/recipe.component';
 
 
 @NgModule({
@@ -18,13 +20,15 @@ import { SearchCriteriaComponent } from './search-criteria/search-criteria.compo
     RecipeListComponent,
     FavoritesPageComponent,
     MainComponent,
-    SearchCriteriaComponent
+    SearchCriteriaComponent,
+    RecipeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   
   providers: [],

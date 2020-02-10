@@ -20,18 +20,23 @@ export class SearchCriteriaComponent implements OnInit {
   constructor(public service: RecipesService) { }
 
   ngOnInit() {
+    this.service.meat = 0;
   }
 
-  openForm() {
-    if (this.open === false) {
-      this.open = true;
-    }
-    else {
-      this.open = false;
-    }
+  fetchRecipes() {
+    this.service.getRecipes();
   }
+
+  // openForm() {
+  //   if (this.open === false) {
+  //     this.open = true;
+  //   }
+  //   else {
+  //     this.open = false;
+  //   }
+  // }
   
-  closeSearchForm() {
-    this.open = false;
-  }
+  // closeSearchForm() {
+  //   this.open = false;
+  // }
 }

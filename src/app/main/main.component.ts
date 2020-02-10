@@ -13,10 +13,6 @@ export class MainComponent implements OnInit {
   ngOnInit() {
   }
 
-  fetchRecipes() {
-    this.service.getRecipes();
-  }
-
   showOnStart = true;
   show = false;
   appear() {

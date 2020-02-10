@@ -1,9 +1,11 @@
-<div class = "card_container">
-    <div class = "card" *ngFor = "let post of service.recipes">
-        <button class = "favorite" (click) = "addRecipe(post)"><i class = "material-icons">favorite</i></button>
-        <h1>{{ post.recipe.label }}</h1>
-        <img [src] = "post.recipe.image">
-        <a href = "{{ post.recipe.url }} ">Recipe Page</a>
-        <app-search-criteria [post] = "post"></app-search-criteria>
+<h2>Search Results</h2>
+
+<div>
+    <div *ngFor = "let post of service.recipes">
+        <app-recipe [post]="post" [fave]="false"></app-recipe>
     </div>
+</div>
+
+<div *ngIf="service.recipes.length == 0">
+    <p>Please Wait...</p>
 </div>

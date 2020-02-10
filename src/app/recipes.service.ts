@@ -8,8 +8,8 @@ export class RecipesService {
   favoritesList = [];
   recipes = [];
 
-  YOUR_APP_ID = '40badb0a';
-  YOUR_APP_KEY = '440e881e1f0dd3eb17fa64fd1f9efa46';
+  YOUR_APP_ID = '10c8657b';
+  YOUR_APP_KEY = '7074f3f9b91a9277a60d79b689290e97';
   MEAT = '';
   HEALTH_LABELS = '';
   DIET_LABELS = '';
@@ -19,10 +19,7 @@ export class RecipesService {
 
 
   //MAIN ITEM
-  beef : boolean = false;
-  chicken : boolean = false;
-  pork : boolean = false;
-  lamb : boolean = false;
+  meat : number = 0;
 
   //HEALTH
   vegan : boolean = false;
@@ -43,24 +40,29 @@ export class RecipesService {
   getRecipes() {
     let baseUrl = this.baseUrl;
 
-    if (!this.beef && !this.chicken && !this.pork && !this.lamb) {
-      baseUrl += `no meat`;
-    }
-
-    if (this.beef) {
-      baseUrl += ` beef`;
-    }
-
-    if (this.chicken) {
-      baseUrl += ` chicken`;
-    }
-
-    if (this.pork) {
-      baseUrl += ` pork`;
-    }
-
-    if (this.lamb) {
-      baseUrl += ` lamb`;
+    this.meat = Number(this.meat);
+    
+    switch (this.meat) {
+      case 0: {
+        baseUrl += `meatless`;
+        break;
+      }
+      case 1: {
+        baseUrl += ` beef`;
+        break;
+      }
+      case 2: {
+        baseUrl += ` chicken`;
+        break;
+      }
+      case 3: {
+        baseUrl += ` pork`;
+        break;
+      }
+      case 4: {
+        baseUrl += ` lamb`;
+        break;
+      }
     }
     
     baseUrl += '&';
@@ -124,22 +126,6 @@ export class RecipesService {
 
     baseUrl += this.infoUrl;
 
-    // this.beef = false;
-    // this.chicken = false;
-    // this.pork = false;
-    // this.lamb = false;
-    // this.vegan = false;
-    // this.vegetarian = false;
-    // this.sugarConscious = false;
-    // this.peanutFree = false;
-    // this.treeNutFree = false;
-    // this.alcoholFree = false;
-    // this.balanced = false;
-    // this.highProtein = false;
-    // this.lowCarb = false;
-    // this.lowFat = false;
-
-
     return(this.httpClient.get(baseUrl).subscribe((data : any) => {
       console.log(data); 
       this.recipes = data.hits;
@@ -149,6 +135,13 @@ export class RecipesService {
 
   addToFavoritesList(post) {
     this.favoritesList.push(post);
-    console.log(this.favoritesList);
+  }
+
+  removeFromFavoritesList(post) {
+    for(let i = 0; i < this.favoritesList.length; i++) {
+      if(this.favoritesList[i] == post) {
+        this.favoritesList.splice(i, 1);
+      }
+    }
   }
 }
