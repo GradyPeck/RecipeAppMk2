@@ -1,7 +1,6 @@
-
 <!-- not sure why the search and favorite buttons are on top of the  -->
 <div class="container">
-  
+
   <div class="jumbotron text-center">
     <h1>StockPot Recipes</h1>
     <p>Need a subtitle here ?</p>
@@ -11,125 +10,111 @@
 
 <!-- meat container  = https://www.w3schools.com/bootstrap/bootstrap_get_started.asp -->
 
-  <div class="container">
+<div class="container">
+  <div class="row">
     <div class="row">
-    <div class="col-sm-4">
-      <h3>Meat Options</h3>
-      <div class="row"></div>
-      <div>
-        <label>
-          <input type="radio" name="meat" value="1" [(ngModel)]="service.meat">
-          Beef
-        </label>
+      <div class="col-sm-4">
+        <h3>Meat Options</h3>
+        <div>
+          <label>
+            <input type="radio" name="meat" value="1" [(ngModel)]="service.meat">
+            Beef
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input type="radio" name="meat" value="2" [(ngModel)]="service.meat">
+            Chicken
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input type="radio" name="meat" value="3" [(ngModel)]="service.meat">
+            Pork
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input type="radio" name="meat" value="4" [(ngModel)]="service.meat">
+            Lamb
+          </label>
+        </div>
       </div>
-    
-      <div>
-        <label>
-          <input type="radio" name="meat" value="2" [(ngModel)]="service.meat">
-          Chicken
-        </label>
+
+
+      <!-- HEALTH LABELS -->
+      <div class="col-sm-4">
+
+        <h3>Health Options</h3>
+
+        <div>
+          <label>
+            <input type="checkbox" [(ngModel)]="service.sugarConscious">
+            Sugar-Conscious
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input type="checkbox" [(ngModel)]="service.peanutFree">
+            Peanut-Free
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input type="checkbox" [(ngModel)]="service.treeNutFree">
+            Tree-Nut-Free
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input type="checkbox" [(ngModel)]="service.alcoholFree">
+            Alcohol-Free
+          </label>
+        </div>
+
       </div>
-      
-      <div>
-        <label>
-          <input type="radio" name="meat" value="3" [(ngModel)]="service.meat">
-          Pork
-        </label>
-      </div>
-    
-      <div>
-        <label>
-          <input type="radio" name="meat" value="4" [(ngModel)]="service.meat">
-          Lamb
-        </label>
+
+      <!-- DIET LABELS -->
+
+      <div class="col-sm-4">
+        <h3>Diet Options</h3>
+        <div>
+          <label>
+            <input type="checkbox" [(ngModel)]="service.balanced">
+            Balanced
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input type="checkbox" [(ngModel)]="service.highProtein">
+            High-Protein
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input type="checkbox" [(ngModel)]="service.lowCarb">
+            Low-Carb
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input type="checkbox" [(ngModel)]="service.lowFat">
+            Low-Fat
+          </label>
+        </div>
       </div>
     </div>
-  
-
-<!-- HEALTH LABELS -->
-<div class="col-sm-4">
-    <h3>Health Options</h3>
-    <div class="row">
-    
-  <!-- Grady removed these options because they seem kind of conceptually incompatible with the meat selector -->
-  <!-- <div>
-    <label>
-      <input type="checkbox" [(ngModel)]="service.vegan">
-      Vegan
-    </label>
   </div>
 
   <div>
-    <label>
-      <input type="checkbox" [(ngModel)]="service.vegetarian">
-      Vegetarian
-    </label>
-  </div> -->
-
-  <div>
-    <label>
-      <input type="checkbox" [(ngModel)]="service.sugarConscious">
-      Sugar-Conscious
-    </label>
+    <button (click)="fetchRecipes()" routerLink="/recipeList" routerLinkActive="active"> Submit </button>
   </div>
-
-  <div>
-    <label>
-      <input type="checkbox" [(ngModel)]="service.peanutFree">
-      Peanut-Free
-    </label>
-  </div>
-
-  <div>
-    <label>
-      <input type="checkbox" [(ngModel)]="service.treeNutFree">
-      Tree-Nut-Free
-    </label>
-  </div>
-
-  <div>
-    <label>
-      <input type="checkbox" [(ngModel)]="service.alcoholFree">
-      Alcohol-Free
-    </label>
-  </div>
-</div>
-</div> 
-</div> 
-  
-<!-- DIET LABELS -->
-
-<div class="col-sm-4">
-  <h3>Diet Options</h3>
-  <div class="row">  
-    <label>
-      <input type="checkbox" [(ngModel)]="service.balanced">
-      Balanced
-    </label>
-  </div>
-
-  <div>
-    <label>
-      <input type="checkbox" [(ngModel)]="service.highProtein">
-      High-Protein
-    </label>
-  </div>
-
-  <div>
-    <label>
-      <input type="checkbox" [(ngModel)]="service.lowCarb">
-      Low-Carb
-    </label>
-  </div>
-
-  <div>
-    <label>
-      <input type="checkbox" [(ngModel)]="service.lowFat">
-      Low-Fat
-    </label>
-  </div>
-</div>
-</div>
-<div>
-  <button (click)="fetchRecipes()" routerLink="/recipeList" routerLinkActive="active"> Submit </button></div>
-
