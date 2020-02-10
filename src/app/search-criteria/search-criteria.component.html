@@ -1,6 +1,7 @@
 
 <!-- not sure why the search and favorite buttons are on top of the  -->
 <div class="container">
+  
   <div class="jumbotron text-center">
     <h1>StockPot Recipes</h1>
     <p>Need a subtitle here ?</p>
@@ -13,7 +14,7 @@
   <div class="container">
     
   <h3>Meat Options</h3>
-
+  <div class="row">
   <div>
     <label>
       <input type="radio" name="meat" value="1" [(ngModel)]="service.meat">
@@ -124,5 +125,4 @@
     </label>
   </div>
 </div>
-
-  <button (click)="fetchRecipes()" routerLink="/recipeList" routerLinkActive="active"> Submit </button>
+</div>
