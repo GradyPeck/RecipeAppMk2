@@ -1,0 +1,39 @@
+/* .card_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.material-icons {
+    margin-left: auto;
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+    background-color: rgba(238, 232, 213, 0.125);
+    color:white;
+    border:none;
+    background: none;
+}
+
+.favorite {
+    border: none;
+    background: none;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.movie_poster {
+    max-width: 25vw;
+}
+button{
+    background-color:rgba(238, 232, 213, 0.125);
+    border: none;
+}
+.material-icons-red{
+    color:red;
+} */

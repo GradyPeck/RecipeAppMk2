@@ -1,0 +1,122 @@
+<nav class="alert alert-info container">
+  <h1>AVAILABLE RECIPES</h1>
+    <button type="button" class="btn btn-warning" (click)="appear()">Favorite Recipes</button>
+    <div class="dropdown"> 
+        <button (click)="appear()" type="button" class="dropdown dropButton btn btn-primary">Search Options</button>
+        <div class="dropdown-content dropdown-menu">
+
+          <p class="dropdown-item">Main Item - ** DEFAULT IS NO MEAT</p>
+
+<!-- THE MEATS NEED TO BE RADIO BUTTONS -->
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox"[(ngModel)]="service.beef">
+              Beef
+            </label>
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="service.chicken">
+              Chicken
+            </label>
+          </div>
+         
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox"[(ngModel)]="service.pork">
+              Pork
+            </label>
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox"[(ngModel)]="service.lamb">
+              Lamb
+            </label>
+          </div>
+
+<!-- HEALTH LABELS -->
+          <p class="dropdown-item">Health Labels</p>
+
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="service.vegan">
+              Vegan
+            </label>
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="service.vegetarian">
+              Vegetarian
+            </label>
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="service.sugarConscious">
+              Sugar-Conscious
+            </label>
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="service.peanutFree">
+              Peanut-Free
+            </label>
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="service.treeNutFree">
+              Tree-Nut-Free
+            </label>
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="service.alcoholFree">
+              Alcohol-Free
+            </label>
+          </div>
+
+<!-- DIET LABELS -->
+          <p class="dropdown-item">Diet Labels</p>
+
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="service.balanced">
+              Balanced
+            </label>
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="service.highProtein">
+              High-Protein
+            </label>
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="service.lowCarb">
+              Low-Carb
+            </label>
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="service.lowFat">
+              Low-Fat
+            </label>
+          </div>
+
+
+          <button (click)="fetchRecipes()"> Submit </button>
+        </div>
+    </div>
+</nav>
+<app-favorites-page *ngIf="show"></app-favorites-page>
+<!-- <app-search-criteria></app-search-criteria> -->
+<app-recipe-list *ngIf="showOnStart"></app-recipe-list>
