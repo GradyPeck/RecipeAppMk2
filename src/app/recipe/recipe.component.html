@@ -1,10 +1,11 @@
+
 <h4> {{ post.recipe.label }} </h4>
 <img [src] = "post.recipe.image">
-<button *ngIf="fave" (click) = "removeRecipe(post)">Unfavorite</button>
-<button *ngIf="!fave" (click) = "addRecipe(post)">Favorite</button>
-<button *ngIf="!detailed" (click)="toggleDetailed()">See More</button>
+<button type="button" class="btn btn-outline-secondary" *ngIf="fave" (click) = "removeRecipe(post)">Unfavorite</button>
+<button type="button" class="btn btn-outline-secondary" *ngIf="!fave" (click) = "addRecipe(post)">Favorite</button>
+<button type="button" class="btn btn-outline-success" *ngIf="!detailed" (click)="toggleDetailed()">See More</button>
 <div *ngIf="detailed">
-    <button (click)="toggleDetailed()">See Less</button>
+    <button type="button" class="btn btn-outline-secondary" (click)="toggleDetailed()">See Less</button>
     <h5>Ingredients:</h5>
     <div *ngFor="let ingredient of post.recipe.ingredientLines">
         <li>{{ingredient}}</li>
