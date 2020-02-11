@@ -1,0 +1,7 @@
+.container{
+    background-color:  rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 22%, rgb(139, 109, 24) 100%);
+}
+h2{
+    font-family: 'Coda Caption', sans-serif;  
+}

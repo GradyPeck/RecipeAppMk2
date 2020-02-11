@@ -1,4 +1,6 @@
-<h2>Your Favorite Recipes</h2>
+<link href="https://fonts.googleapis.com/css?family=Coda+Caption:800&display=swap" rel="stylesheet">
+<div class="container">
+    <h2>Your Favorite Recipes</h2>
 <div>
     <div *ngFor = "let post of posts">
         <app-recipe [post]="post" [fave]="true"></app-recipe>
@@ -7,3 +9,5 @@
 <div *ngIf="posts.length == 0">
     <p>You don't have any favorites yet!</p>
 </div>
+</div>
+
