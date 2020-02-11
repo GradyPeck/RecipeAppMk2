@@ -1,0 +1,7 @@
+
+body{
+    background: rgb(56,62,125);
+background: radial-gradient(circle, rgba(56,62,125,1) 22%, rgba(70,251,252,1) 100%);
+font-family: 'Coda Caption', sans-serif;
+
+}
